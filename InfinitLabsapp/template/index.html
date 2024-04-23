@@ -1,13 +1,85 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script defer src="script.js"></script>
+    <title>In.finit</title>
 </head>
 <body>
-    start here
+    <div class="container">
+        <header>
+            <div class="navbar">
+                <div class="logo"><a href="#">In.finit</a></div>
+                <ul class="links">
+                    <li><a href="hero">Home</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="products">Products</a></li>
+                    <li><a href="statement">Remoi </a></li>
+                </ul>
+
+                <!-- TOGGLE BUTTON -->
+                <div class="light-dark-mode">
+                <input type="checkbox" id="toggle">
+                <div class="display">
+                    <label for="toggle">
+                        <div class="circle">
+                            <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+                              </svg>
+                              
+                              <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd" />
+                              </svg>
+                              
+                              
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+                <a href="#" class="action_btn">Explore</a>
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+   
+            </div>
+
+            <div class="dropdown-menu">
+                <li><a href="hero">Home</a></li>
+                <li><a href="about">About Us</a></li>
+                <li><a href="products">Products</a></li>
+                <li><a href="statement">Remoi</a></li>
+                <li><a href="#" class="action_btn">Explore</a></li>
+            </div>  
+        </header>
+    </div>
+    
+    <!-------------------------HOME PAGE  --------------------------->
+    <section class="home">
+        <div class="text">
+            <p class="intro">Healthy Choices with In.finit labs</p>
+            <h1>Advancing Healthcare <br>through Artificial Intelligence</h1>
+            <p>Welcome to in.finit where we are committed to improving health using AI</p>
+            <button id="learn-more">Learn more!<i class="ri-arrow-right-line"></i></button>
+        </div>
+
+        <div class="home-image">
+            <img src="./images/Unveiling_AI_s_Role_in_Healthcare__From_Diagnostics_to_Drug_Development__1_-removebg-preview.png">
+        </div>
+    </section>
+    <div class="social-icons">
+        <a href="linkedin.com/" target="_blank"><i class="ri-instagram-line"></i></a>
+        <a href="instagram.com/" target="_blank"><i class="ri-linkedin-box-fill"></i></i></a>
+        <a href="twitter.com" target="_blank"><i class="ri-twitter-x-line"></i></a>
+    </div>
+
+    <div class="scroll-down">
+        <a href="#"><i class="ri-arrow-down-s-fill"></i></i></a>
+    </div>
 </body>
 </html>
