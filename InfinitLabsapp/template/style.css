@@ -313,6 +313,19 @@ header{
 
 .home img{
     width: 650px;
+    animation: beat 15s infinite;
+}
+
+@keyframes beat{
+    0%{
+        transform: scale(1);
+    }
+    20%{
+        transform: scale(1.15);
+    }
+    40%{
+        transform: scale(1.4);
+    }
 }
 
 .text{
