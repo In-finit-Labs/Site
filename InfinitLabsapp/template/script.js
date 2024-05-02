@@ -3,6 +3,12 @@ const toggleBtn = document.querySelector(".toggle_btn");
 const toggleIcon = document.querySelector(".toggle_btn i");
 const dropdown = document.querySelector(".dropdown-menu");
 
+toggleBtn.addEventListener("click", () => {
+    dropdown.classList.toggle("open");
+    const isOpen = dropdown.classList.contains("open");
+    toggleIcon.classList = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars"
+});
+
 
 const header = document.querySelector("header");
 
