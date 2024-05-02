@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&family=Playball&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&family=Playball&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
     margin: 0;
@@ -7,17 +8,50 @@
 }
 
 :root{
-    --primary-color: #edf2fc;
-    --secondary-color: #000106;
-    --other-color: #fff;
+    --bg-wild-blue-yonder: hsla(216, 33%, 68%, 1);
+  --bg-carolina-blue: hsla(199, 89%, 49%, 1);
+  --bg-prussian-blue: hsla(216, 33%, 20%, 1);
+  --bg-oxford-blue: hsla(222, 44%, 13%, 1);
+  --bg-oxford-blue-2: hsla(222, 47%, 11%, 1);
+
+  /** Text colors */
+  --text-white: hsla(0, 0%, 100%, 1);
+  --text-alice-blue: hsla(216, 100%, 95%, 1);
+  --text-columbia-blue: hsla(199, 69%, 84%, 1);
+  --text-wild-blue-yonder: hsla(216, 33%, 68%, 1);
+  --text-carolina-blue: hsla(199, 89%, 49%, 1);
+  --text-shadow-blue: hsla(217, 24%, 59%, 1);
+  --text-slate-gray: hsla(217, 17%, 48%, 1);
+
+  /** Gradient colors */
+  --gradient-1: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%);
+  --gradient-2: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%, #0ea5ea);
+  --gradient-3: linear-gradient(0deg, #000d1a, transparent);
+
+  /** Border colors */
+  --border-wild-blue-yonder: hsla(216, 33%, 68%, 1);
+  --border-prussian-blue: hsla(216, 33%, 20%, 1);
+  --border-white: hsl(0, 0%, 100%);
+  --border-white-alpha-15: hsla(0, 0%, 100%, 0.15);
+
+  /** Default colors */
+  --white: hsl(0, 0%, 100%, 1);
+  --black: hsl(0, 0%, 0%, 1);
+
+  /*Box shadow  */
+  --shadow-1: 0 8px 20px 0 hsla(0, 0%, 0%, 0.05);
+  --shadow-2: 0px 3px 20px hsla(180, 90%, 43%, 0.2);
 }
 
-/* 
+
 body{
     min-height: 100vh;
-    background: var(--secondary-color);
-    color: #fff;
-} */
+    background-color: var(--bg-oxford-blue-2);
+    color: var(--text-shadow-blue);
+    overflow-y: overlay;
+    line-height: 1.5;
+    font-family: "Noto Sans", sans-serif;
+}
 
 
 /* TOGGLE */
@@ -50,7 +84,6 @@ label{
 }
 
 .circle{
-    /* border: solid; */
     width: 35px;
     height: 30px;
     border-radius: 99px;
@@ -124,8 +157,7 @@ a{
 }
 
 a:hover{
-    color: teal;
-    
+    color: var(--text-carolina-blue);
 }
 
 /* HEADER - NAVBAR*/
@@ -136,8 +168,14 @@ header{
     z-index: 1000;
     width: 100%;
     padding: 0.2rem;
-    background: transparent;
+    background-color: var(--bg-oxford-blue-2);
 }
+
+header.active {
+    box-shadow: var(--shadow-1);
+    border-block-end: 1px solid var(--bg-prussian-blue);
+    animation: slideIn 0.5s ease forwards;
+  }
 
 .navbar{
     width: 100%;
@@ -147,15 +185,13 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    font-style: normal;
 }
 
 .navbar .logo a{
     font-size: 1.5rem;
     font-family: "Playball", cursive;
-    font-weight: 400;
-    
+    font-weight: 400; 
 }
 
 .links a::after{
@@ -176,27 +212,35 @@ header{
 .navbar .links{
     display: flex;
     gap: 3.5rem;
+    color: var(--text-alice-blue);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.links a{
+    font-weight: 400;
+    font-size: 1rem;
 }
 
 .links .forward{
     margin-left: 1.5rem;
     color: #fff;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
 }
 
 .navbar .toggle_btn{
     color: #fff;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     display: none;
 }
 
 .action_btn{
-    background-color: teal;
-    color: #fff;
+    background-image: var(--gradient-2);
+    color: var(--text-alice-blue); 
     padding: 0.5rem 1rem;
     border: none;
     outline: none;
-    border-radius: 20px;
+    border-radius: 5px;
     font-size: 0.8rem;
     font-weight: bold;
     cursor: pointer;
@@ -278,23 +322,31 @@ header{
 /*************** HOME PAGE ***************/
 .home{
     display: flex;
-    /* grid-template-columns: repeat(2, 1fr); */
-    margin: 6rem 5rem;
+    margin: 6rem 5rem 2rem 5rem ;
     height: 100%;
     min-height: 100vh;
     position: relative;
     align-items: center;
     margin-right: 0rem;
+    overflow: hidden;
 }
 
 
 .home h1{
     color:#fff;
     font-family: "Playfair Display", serif;
-    font-weight: 500;
+    font-weight: 900;
     font-size: 44px;
-    margin: 1.5rem 0;
-    
+    margin: 1rem 0;
+}
+
+h1 .span{
+    background-image: var(--gradient-1);
+    display: inline-block;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 42px;
 }
 
 .home .intro{
@@ -303,16 +355,14 @@ header{
     margin-bottom: 1rem;
     font-size: 14px;
     opacity: 0.6;
-    font-family: "Poppins", sans-serif;;
 }
 
 .home p{
-    font-family: "Poppins", sans-serif;
     opacity: 0.5;
 }
 
 .home img{
-    width: 650px;
+    width: 645px;
     animation: beat 15s infinite;
 }
 
@@ -329,20 +379,19 @@ header{
 }
 
 .text{
-    margin-bottom: 6rem;
+    margin-bottom: 2rem;
 }
 
 #learn-more{
-    width: 142px;
-    border-radius: 25px;
+    width: 130px;
+    border-radius: 5px;
     outline: none;
     border: none;
-    background: teal;
+    background-image: var(--gradient-2);
     color: white;
-    padding: 10px 15px;
+    padding: 13px 15px;
     margin:2rem 0 10px 5px;
     cursor: pointer;
-    font-family: "Alkatra", system-ui;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -376,7 +425,7 @@ header{
 }
 
 .social-icons i:hover{
-    color: #4d9559;
+    color: #0bd1d1;
     transform: translateY(-5px);
 }
 
@@ -487,7 +536,167 @@ header{
 }
 
 
+/**********************ABOUT US  ******************************/
+.about{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+ 
+.about h2{
+    margin: 0.8rem;
+    background-image: var(--gradient-1);
+    display: inline-block;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 3.3rem;
+}
+ 
+ .about .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+ }
+ 
+.about .content p{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 1.8rem;
+}
+ 
+ .about .content p span{
+     font-weight: 600;
+     color: white;
+     font-size: 22px;
+ 
+}
+ 
+.about img{
+    width: 20rem;
+    margin: 1.3rem 4.5rem;
+ 
+}
+
+/****************** SlideTop *******************/
+[data-viewPort = "slideTop"]{
+    transition:  1.5s cubic-bezier(0.4, 1, 0.22, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+    transition-delay: 0.2s;
+}
+[data-viewPort = "slideTop"].is-viewPort{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media (max-width: 942px){
+    .about img{
+        margin: 1.3rem 2rem;
+    }
+    .about .content p{
+        line-height: normal;
+    }
+}
+
+@media (max-width: 555px){
+    .about .content{
+        display: flex;
+        flex-direction: column !important;
+        /* font-size: 20px; */
+    }
+
+    .about .first{
+        display: flex;
+        flex-direction: column-reverse !important;
+    }
+}
+/********************** For slideLeft*********************/
+[data-viewPort = "slideLeft"]{
+    transition:  1.5s cubic-bezier(0.4, 1, 0.22, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-4rem);
+    transition-delay: 0.2s;
+}
+[data-viewPort = "slideLeft"].is-viewPort{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+ 
 
 
 
+
+/***************** SERVICES *********************/
+.services{
+   margin: 0 6.5rem;
+}
+
+
+.services h2{
+    margin-bottom: 3rem;
+    font-size: 3.3rem;
+    text-align: center;
+    background-image: var(--gradient-1);
+    display: inline-block;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.services h3{
+    color: var(--text-carolina-blue);
+}
+
+.services-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.services-container .services-box{
+    flex: 1 1 19rem;
+    background-color: var(--bg-oxford-blue);
+    border: 1.5px solid var(--border-prussian-blue);
+    padding: 3rem 1.5rem 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.services-container .services-box:hover{
+    border-color: var(--bg-carolina-blue);
+    transform: scale(1.02);
+    /* transform: translateY(-0.7rem); */
+}
+
+.services-box i{
+   font-size: 3rem;
+   /* color: var(--text-slate-gray);    */
+   color: var(--white);
+   margin-bottom: 1rem;
+}
+
+.services-box h3{
+    font-size: 1rem;
+}
+
+.services-box p{
+    font-size: 1rem;
+    margin: 1rem 0;
+}
 
