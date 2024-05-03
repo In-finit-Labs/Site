@@ -40,34 +40,6 @@ window.addEventListener("scroll", () => {
 });
 
 
-//LINK TABS TO PAGES
-const home = document.getElementById("homepage");
-home.addEventListener("click", () =>{
-    const homePage = document.getElementById("home");
-    homePage.scrollIntoView();
-});
-
-const AboutUs = document.getElementById("about-link")
-AboutUs.addEventListener("click", () =>{
-    const aboutUs = document.getElementById("about");
-    aboutUs.scrollIntoView();
-});
-
-const Services = document.getElementById("services-link");
-Services.addEventListener("click", () =>{
-    const service = document.getElementById("services");
-    service.scrollIntoView();
-})
-
-const BlogPage = document.getElementById("blog-link");
-BlogPage.addEventListener("click", ()=>{
-  const Blog = document.getElementById("blog");
-  Blog.scrollIntoView();
-})
-
-
-
-
 // SCROLL REVEAL
 
 const sr = ScrollReveal({
