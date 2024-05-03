@@ -15,12 +15,39 @@ const header = document.querySelector("header");
 window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
       header.classList.add("active");
-      backTopBtn.classList.add("active");
     } else {
       header.classList.remove("active");
-      backTopBtn.classList.remove("active");
     }
   });
+
+
+// NAV BAR SCROLL
+const home = document.getElementById("homepage");
+home.addEventListener("click", () =>{
+    const homePage = document.getElementById("home");
+    homePage.scrollIntoView();
+});
+
+
+const AboutUs = document.getElementById("about-link")
+AboutUs.addEventListener("click", () =>{
+    const aboutUs = document.getElementById("about");
+    aboutUs.scrollIntoView();
+});
+
+const Services = document.getElementById("services-link");
+Services.addEventListener("click", () =>{
+    const service = document.getElementById("services");
+    service.scrollIntoView();
+})
+
+// const BlogPage = document.getElementById("blog-link");
+// BlogPage.addEventListener("click", ()=>{
+//   const Blog = document.getElementById("blog");
+//   Blog.scrollIntoView();
+// })
+
+
 
 // SCROLL REVEAL
 
